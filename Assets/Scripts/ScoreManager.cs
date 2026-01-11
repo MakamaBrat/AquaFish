@@ -4,12 +4,14 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     public TMP_Text textoScore;
+    public TMP_Text textoScore2;
 
 
     private int scoresBall;
-
+    
     private const string BEST_SCORE_KEY = "BEST_SCORE";
-
+    public AudioSource au;
+    public AudioSource au2;
     void OnEnable()
     {
      //   scoresBall = 0;
@@ -23,13 +25,23 @@ public class ScoreManager : MonoBehaviour
     void UpdateText()
     {
         textoScore.text =scoresBall.ToString();
+        textoScore2.text =scoresBall.ToString();
         
     }
 
     // ➕ Добавить очки
-    public void AddScore(int amount = 1)
+    public void AddScore(int amount)
     {
         scoresBall += amount;
+        if (amount > 0)
+        {
+            au.Play();
+        }
+        else { au2.Play(); }
+        if(scoresBall<0)
+        {
+            scoresBall = 0;
+        }
         UpdateText();
     }
 

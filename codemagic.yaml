@@ -1,6 +1,6 @@
 workflows:
   unity-build:
-    name: Unity Build - IceTap
+    name: Unity Build - AquaFish
     instance_type: mac_mini_m2
     max_build_duration: 120
     environment:
@@ -38,7 +38,7 @@ workflows:
           -batchmode -quit -returnLicense || true
 
     artifacts:
-      - IceTap.aab
-      - IceTap.apk
+      - AquaFish.aab
+      - AquaFish.apk
       - unity_build.log
       - unity_license.log
