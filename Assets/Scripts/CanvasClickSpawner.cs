@@ -11,7 +11,7 @@ public class CanvasClickSpawner : MonoBehaviour
 
     [Header("Cooldown")]
     public float spawnCooldown = 1f;
-
+    public SettingsSwitcher settingsSwitcher;
     private bool canSpawn;
 
     void OnEnable()
@@ -50,6 +50,12 @@ public class CanvasClickSpawner : MonoBehaviour
 
         worldPos.z = 0f;
         Vector3 pos = new Vector3(worldPos.x, worldPos.y, transform.position.z);
+        if(settingsSwitcher.dummyOn==true)
+        {
+#if UNITY_ANDROID || UNITY_IOS
+            Handheld.Vibrate();
+#endif
+        }
         Instantiate(spawnPrefab, pos, Quaternion.identity,transform);
     }
 
