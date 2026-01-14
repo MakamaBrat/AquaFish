@@ -2248,7 +2248,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &730624587
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2294,6 +2294,7 @@ MonoBehaviour:
   worldCamera: {fileID: 963194227}
   spawnPrefab: {fileID: 5279279769475433389, guid: ab2ad0adfaf68ad4a938c84f5b2555b2, type: 3}
   spawnCooldown: 1
+  settingsSwitcher: {fileID: 560449992}
 --- !u!1 &814144464
 GameObject:
   m_ObjectHideFlags: 0
